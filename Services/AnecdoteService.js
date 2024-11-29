@@ -6,3 +6,7 @@ export async function getAll() {
     return response.data
 }
 
+export async function uploadAnecdote(data) {
+    const response = await axios.post(endpoint, {content: data, votes: 0});
+    return response.data
+}
