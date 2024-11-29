@@ -48,7 +48,12 @@
     {
       "id": "29f2",
       "content": "asdadffgdfg",
-      "votes": 2
+      "votes": 3
+    },
+    {
+      "id": "d592",
+      "content": "test notification",
+      "votes": 0
     }
   ]
 }

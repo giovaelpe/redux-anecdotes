@@ -3,9 +3,8 @@ import { useEffect } from 'react';
 import { AnecdoteForm } from './components/AnecdoteForm';
 import { AnecdotesList } from './components/AnecdotesList';
 import { Filterform } from './components/Filterform';
-import {getAll} from '../Services/AnecdoteService'
 import { useDispatch } from 'react-redux';
-import { initializeAnecdotes, setAll } from './reducers/anecdoteReducer';
+import { initializeAnecdotes} from './reducers/anecdoteReducer';
 
 
 const App = () => {

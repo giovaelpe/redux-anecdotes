@@ -30,7 +30,6 @@ export const initializeAnecdotes = () => {
 export const createAnecdote = (data) => {
   return async dispatch => {
     const anecdote = await uploadAnecdote(data);
-    console.log(anecdote)
     dispatch(add(anecdote));
   }
 }
