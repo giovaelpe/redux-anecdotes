@@ -1,6 +1,5 @@
 import { useDispatch } from "react-redux";
-import { setAll} from "../reducers/anecdoteReducer";
-import { getAll, uploadAnecdote } from "../../Services/AnecdoteService";
+import { createAnecdote} from "../reducers/anecdoteReducer";
 import { clear, set } from "../reducers/notificationReducer";
 
 export function AnecdoteForm() {
@@ -9,9 +8,7 @@ export function AnecdoteForm() {
         e.preventDefault();
         const newAnecdote = e.target.anecdote.value;
         e.target.anecdote.value = '';
-        await uploadAnecdote(newAnecdote);
-        const newData = await getAll();
-        dispatch(setAll(newData));
+        dispatch(createAnecdote(newAnecdote))
         dispatch(set(`Added : ${newAnecdote}`));
         setTimeout(() => {
             dispatch(clear())
