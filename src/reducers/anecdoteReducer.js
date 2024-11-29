@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getAll, uploadAnecdote } from "../../Services/AnecdoteService";
+import { getAll, uploadAnecdote, voteBackend } from "../../Services/AnecdoteService";
 
 
 const anecdoteReducer = createSlice({
@@ -32,6 +32,13 @@ export const createAnecdote = (data) => {
     const anecdote = await uploadAnecdote(data);
     console.log(anecdote)
     dispatch(add(anecdote));
+  }
+}
+
+export const voteAnecdote = (anecdote) => {
+  return async dispatch => {
+    const votedAnecdote = await voteBackend(anecdote);
+    dispatch(vote(votedAnecdote.id));
   }
 }
 
